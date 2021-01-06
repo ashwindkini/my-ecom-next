@@ -1,0 +1,23 @@
+[
+  {
+    "id": "price_1I5ZsGLWVxYgIjR8dwiopKqp",
+    "title": "Space Jelly Tshirt",
+    "description": "blah blah blah about space jelly tshirt.",
+    "image": "/images/spacejelly-tshirt.jpg",
+    "price": 200.00
+  },
+  {
+    "id": "price_1I5ZszLWVxYgIjR8SP05KLDI",
+    "title": "Space Jelly Stickers",
+    "description": "blah blah blah about space jelly stickers.",
+    "image": "/images/spacejelly-stickers.jpg",
+    "price": 100.00
+  },
+  {
+    "id": "price_1I5ZtZLWVxYgIjR8XYgrCx1Z",
+    "title": "Space Jelly Combo",
+    "description": "blah blah blah about space jelly combo.",
+    "image": "/images/spacejelly-combo.jpg",
+    "price": 250.00
+  }
+]
