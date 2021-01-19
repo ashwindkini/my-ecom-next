@@ -1,10 +1,10 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import Head from "next/head";
+import styles from "../styles/Home.module.css";
 
-import products from '../products.json';
+import products from "../products.json";
+import { initiateCheckout } from "../lib/payments";
 
 export default function Home() {
-  console.log('products', products);
   return (
     <div className={styles.container}>
       <Head>
@@ -22,15 +22,33 @@ export default function Home() {
         </p>
 
         <ul className={styles.grid}>
-          {products.map(product => {
+          {products.map((product) => {
             const { id, title, price, description, image } = product;
-            return(
+            return (
               <li key={id} className={styles.card}>
-                <a href="https://nextjs.org/docs">
+                <a href="#">
                   <img src={image} alt={title} />
                   <h3>{title}</h3>
                   <p>{price}</p>
                   <p>{description}</p>
+                  <p>
+                    <button
+                      className={styles.button}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        initiateCheckout({
+                          lineItems: [
+                            {
+                              price: id,
+                              quantity: 1,
+                            },
+                          ],
+                        });
+                      }}
+                    >
+                      Buy Now!
+                    </button>
+                  </p>
                 </a>
               </li>
             );
@@ -44,10 +62,10 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{' '}
+          Powered by{" "}
           <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
         </a>
       </footer>
     </div>
-  )
+  );
 }
